@@ -1,0 +1,31 @@
+// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+    //obtain the total seconds since midnihgt jan1 1970
+	unsigned int totalSeconds = time(0);
+
+	//compute the current second in the minute in the hour
+	unsigned int currentSecond = totalSeconds % 60;
+
+	//Obtain the total minutes
+	int totalMinutes = totalSeconds / 60;
+
+	//compute current minutes
+	int currentMinute = totalMinutes % 60;
+
+	//Obtain the total hours
+	int totalHours = totalMinutes / 60;
+
+	//compute the current hour
+	int currentHour = totalHours % 24; 
+
+	//display results
+	cout << "current time is " << currentHour << " : " << currentMinute << " : " << currentSecond << " GMT" << endl;
+}
